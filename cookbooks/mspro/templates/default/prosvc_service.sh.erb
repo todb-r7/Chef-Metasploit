@@ -9,6 +9,10 @@
 # Load Ubuntu init-functions
 . /lib/lsb/init-functions
 
+# The Yard gem requires the HOME variable to be set, but
+# the service command unsets all environment variables.
+export HOME="/home/msbuilder"
+
 LOGFILE="/var/log/prosvc.log"
 
 log()
