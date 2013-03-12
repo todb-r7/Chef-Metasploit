@@ -19,7 +19,7 @@ log()
 # what's the executable you actually want to run
 DAEMON="<%= node['prosvc']['path']%>"
 
-ENVIRON="<%= node['pro-env']%>"
+ENVIRON=${ENVIRON:-<%= node['pro-env']%>}
 # Pass in desired arguments
 ARGS="-E $ENVIRON"
 
