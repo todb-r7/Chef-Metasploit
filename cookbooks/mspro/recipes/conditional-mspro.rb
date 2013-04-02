@@ -70,10 +70,10 @@ end
 
 #---------- Gems, Rails ------------------------------------------
 execute 'install bundle' do
-  user "root"
+  user node['user']
   cwd node['rails-root']
   environment ( {'RAILS_ENV' => node['pro-env']} )
-  command "bundle install"
+  command "bundle install --path vendor/bundle"
 end
 
 # The Rails rake command itself is idempotent
