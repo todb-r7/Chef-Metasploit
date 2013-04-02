@@ -60,7 +60,7 @@ execute 'create postgres user' do
   user "postgres"
   # Not superuser, not allowed to create new roles, can create new DBs:
   command "createuser -SRd #{node['rails-database']['username']} > /dev/null 2>&1"
-  ignore_failure true # only until we debug why above is thowing dumb error
+  not_if "psql --tuples-only --command \"SELECT usename FROM pg_user WHERE usename='#{node['rails-database']['username']}'\" | grep #{node['rails-database']['username']}", :user => 'postgres'
 end
 
 execute 'set postgres user password' do
