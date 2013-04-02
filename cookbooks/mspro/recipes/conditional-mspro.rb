@@ -76,6 +76,7 @@ execute 'install bundle' do
   cwd node['rails-root']
   environment ( {'RAILS_ENV' => node['pro-env']} )
   command "bundle install --path vendor/bundle"
+  not_if "bundle check >/dev/null", :user => node['user'], :cwd => node['rails-root']
 end
 
 # The Rails rake command itself is idempotent
