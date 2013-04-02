@@ -33,6 +33,7 @@ git "msf" do
   user node['user']
   group node['user']
   action :sync
+  notifies :restart, "service[prosvc]", :delayed
 end
 
 git "pro" do
@@ -43,6 +44,7 @@ git "pro" do
   user node['user']
   group node['user']
   action :sync
+  notifies :restart, "service[prosvc]", :delayed
 end
 
 link "#{node['pro-root']}/msf3" do
@@ -96,10 +98,6 @@ end
 service "prosvc" do
   supports [:start, :stop, :restart]
   action :enable
-end
-
-service "prosvc" do
-  action :restart
 end
 
 # Faster in web UI:
