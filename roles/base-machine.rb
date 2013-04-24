@@ -1,6 +1,7 @@
 name "base-machine"
 description "A development environment"
 run_list(
+  "recipe[apt]",
   "recipe[vim]",
   "recipe[java]",
   "recipe[openssh]",
