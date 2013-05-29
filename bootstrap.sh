@@ -15,9 +15,9 @@ if [[ "$1" == "apt" ]]; then
 else
   # Install Ruby
   sudo mkdir -p /usr/local/src && cd /usr/local/src
-  sudo wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p194.tar.gz
-  sudo tar -zxf ruby-1.9.3-p194.tar.gz
-  cd ruby-1.9.3-p194
+  sudo wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p392.tar.gz
+  sudo tar -zxf ruby-1.9.3-p392.tar.gz
+  cd ruby-1.9.3-p392
   sudo ./configure && sudo make && sudo make install
 
   # Install RubyGems
