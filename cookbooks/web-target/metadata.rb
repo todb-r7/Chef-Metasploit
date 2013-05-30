@@ -5,7 +5,7 @@ license           "BSD"
 description       "Installs/Configures purposefully vulnerable web apps for testing"
 version           "0.1.0"
 
-%w{ apache2 java mysql postgresql tomcat }.each do |cb|
+%w{ apache2 apt java mysql postgresql tomcat }.each do |cb|
   depends cb
 end
 
