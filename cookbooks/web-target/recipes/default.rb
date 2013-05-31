@@ -1,5 +1,6 @@
 
 # Depedencies
+include_recipe "apt"
 include_recipe "web-target::apache2"
 include_recipe "web-target::mysql"
 include_recipe "web-target::postgresql"
