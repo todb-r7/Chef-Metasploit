@@ -71,6 +71,10 @@ execute 'set postgres user password' do
 end
 
 #---------- Gems, Rails ------------------------------------------
+package 'libpcap-dev' do
+  action :install
+end
+
 execute 'install bundle' do
   user node['user']
   cwd node['rails-root']
