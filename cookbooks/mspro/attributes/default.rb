@@ -6,7 +6,7 @@ default['rails-root'] = "#{default['pro-root']}/ui"
 
 # GIT information
 default['msf-git-branch'] = "master"
-default['pro-git-branch'] = "develop"
+default['pro-git-branch'] = "master"
 
 # The Rails/Prosvc environment to use
 default['pro-env'] = "test"
